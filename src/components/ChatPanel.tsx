@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Send } from 'lucide-react';
+// Import Sophie's profile image from Figma assets
+import sophieProfileImg from "figma:asset/223ba36d3b6708d7df496389d00411edff9f0468.png";
 
 interface Message {
   role: 'user' | 'ai';
@@ -39,17 +41,14 @@ export function ChatPanel({ messages, input, onInputChange, onSendMessage, isLoa
     "Who are you?"
   ] : [];
 
-  // Sophie's profile image URL - using the same image from About Me section
-  const sophieImageUrl = "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg";
-
   return (
     <div className="flex flex-col h-full bg-white rounded-tl-[12px] rounded-tr-[12px] shadow-[0px_4px_6px_0px_rgba(0,0,0,0.09)] overflow-hidden">
       {/* Chat Header */}
       <div className="bg-[#d8e493] px-8 h-[60px] flex items-center shrink-0">
         <div className="flex items-center gap-[14px]">
-          <div className="w-[44px] h-[44px] bg-white rounded-[12px] overflow-hidden flex items-center justify-center shrink-0">
+          <div className="w-[44px] h-[44px] bg-white rounded-full overflow-hidden flex items-center justify-center shrink-0">
             <img 
-              src={sophieImageUrl}
+              src={sophieProfileImg}
               alt="Sophie"
               className="w-full h-full object-cover"
             />
@@ -66,9 +65,9 @@ export function ChatPanel({ messages, input, onInputChange, onSendMessage, isLoa
             className={`flex gap-3 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {msg.role === 'ai' && (
-              <div className="w-[44px] h-[44px] bg-[#dde9c8] rounded-[12px] overflow-hidden flex items-center justify-center shrink-0">
+              <div className="w-[44px] h-[44px] bg-[#dde9c8] rounded-full overflow-hidden flex items-center justify-center shrink-0">
                 <img 
-                  src={sophieImageUrl}
+                  src={sophieProfileImg}
                   alt="Sophie AI"
                   className="w-full h-full object-cover"
                 />
@@ -86,7 +85,7 @@ export function ChatPanel({ messages, input, onInputChange, onSendMessage, isLoa
               </p>
             </div>
             {msg.role === 'user' && (
-              <div className="w-[44px] h-[44px] bg-[#d8e493] rounded-[12px] flex items-center justify-center shrink-0">
+              <div className="w-[44px] h-[44px] bg-[#d8e493] rounded-full flex items-center justify-center shrink-0">
                 <svg width="24" height="24" viewBox="0 0 48 48" fill="none">
                   <circle cx="24" cy="24" r="20" fill="#b7c277"/>
                   <path d="M24 14c-3.3 0-6 2.7-6 6v4h12v-4c0-3.3-2.7-6-6-6z" fill="white"/>
@@ -100,9 +99,9 @@ export function ChatPanel({ messages, input, onInputChange, onSendMessage, isLoa
         {/* Loading indicator */}
         {isLoading && (
           <div className="flex gap-3 justify-start">
-            <div className="w-[44px] h-[44px] bg-[#dde9c8] rounded-[12px] overflow-hidden flex items-center justify-center shrink-0">
+            <div className="w-[44px] h-[44px] bg-[#dde9c8] rounded-full overflow-hidden flex items-center justify-center shrink-0">
               <img 
-                src={sophieImageUrl}
+                src={sophieProfileImg}
                 alt="Sophie AI"
                 className="w-full h-full object-cover"
               />
