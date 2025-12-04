@@ -56,13 +56,13 @@ export function InfoPanel({ onFAQClick }: InfoPanelProps) {
   return (
     <div className="bg-white h-full overflow-y-auto shadow-[0px_4px_6px_0px_rgba(0,0,0,0.09)]">
       <div className="px-8 py-10 flex flex-col gap-7">
-        {/* Title */}
-        <h1 className="font-['Inter:Bold',sans-serif] text-[32px] leading-normal not-italic text-black">
+        {/* Title - Extra Bold */}
+        <h1 className="font-['Inter:Extra_Bold',sans-serif] font-extrabold text-[32px] leading-normal not-italic text-black">
           🤖 Sophie.AI
         </h1>
 
-        {/* Description */}
-        <div className="font-['Inter:Semi_Bold',sans-serif] font-semibold text-[16px] leading-[1.4] not-italic text-[#6d6d6d]">
+        {/* Description - Regular (降級讓它不搶眼) */}
+        <div className="font-['Inter:Regular',sans-serif] font-normal text-[16px] leading-[1.4] not-italic text-[#6d6d6d]">
           <p className="mb-0 whitespace-pre-wrap">
             {`Discover Sophie.AI, your digital companion for exploring my professional journey. This RAG-powered AI assistant provides seamless insights into my background, projects,  and my product experiences.`}
           </p>
@@ -102,7 +102,8 @@ export function InfoPanel({ onFAQClick }: InfoPanelProps) {
         <div className="bg-white rounded-[12px] shadow-[2px_3px_9px_1px_rgba(0,0,0,0.07)] w-full">
           <div className="flex flex-row items-center overflow-clip rounded-[inherit] size-full">
             <div className="box-border flex flex-col gap-[18px] px-[30px] py-[20px] w-full">
-              <p className="font-['Inter:Bold',sans-serif] text-[18px] leading-[1.4] not-italic text-black">
+              {/* About Me Title - Extra Bold */}
+              <p className="font-['Inter:Extra_Bold',sans-serif] font-extrabold text-[18px] leading-[1.4] not-italic text-black">
                 About Me
               </p>
 
@@ -110,7 +111,8 @@ export function InfoPanel({ onFAQClick }: InfoPanelProps) {
               <div className="flex gap-6 items-center w-full">
                 <Favicon1 />
                 <div className="flex flex-col gap-[4px] leading-[1.4] not-italic text-black flex-1">
-                  <p className="font-['Inter:Bold',sans-serif] text-[16px]">Sophie Peng</p>
+                  {/* Sophie Peng Name - Extra Bold */}
+                  <p className="font-['Inter:Extra_Bold',sans-serif] font-extrabold text-[16px]">Sophie Peng</p>
                   <a
                     href="mailto:sophieee0306@gmail.com"
                     className="font-['Inter:Medium',sans-serif] font-medium text-[#333333] hover:text-[#b7c277] transition-colors"
@@ -120,8 +122,8 @@ export function InfoPanel({ onFAQClick }: InfoPanelProps) {
                 </div>
               </div>
 
-              {/* Bio */}
-              <p className="font-['Inter:Regular',sans-serif] text-[14px] leading-[1.4] not-italic text-black">
+              {/* Bio - Regular */}
+              <p className="font-['Inter:Regular',sans-serif] font-normal text-[14px] leading-[1.4] not-italic text-black">
                 {`I'm a product manager specializing in UX strategy, semantic retrieval, and vector-powered personalization.`}
                 <br aria-hidden="true" />
                 By combining user empathy, behavioral insights, and AI-driven methods, I build products that balance usability and intelligence.
