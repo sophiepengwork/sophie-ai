@@ -46,11 +46,12 @@ export function ChatPanel({ messages, input, onInputChange, onSendMessage, isLoa
       {/* Chat Header */}
       <div className="bg-[#d8e493] px-8 h-[60px] flex items-center shrink-0">
         <div className="flex items-center gap-[14px]">
-          <div className="w-[44px] h-[44px] bg-white rounded-full overflow-hidden flex items-center justify-center shrink-0">
+          <div className="w-[44px] h-[44px] min-w-[44px] min-h-[44px] bg-white rounded-full overflow-hidden flex items-center justify-center shrink-0">
             <img 
               src={sophieProfileImg}
               alt="Sophie"
               className="w-full h-full object-cover"
+              style={{ objectFit: 'cover' }}
             />
           </div>
           <h2 className="text-[20px] font-semibold text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Sophie.AI</h2>
@@ -65,11 +66,12 @@ export function ChatPanel({ messages, input, onInputChange, onSendMessage, isLoa
             className={`flex gap-3 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {msg.role === 'ai' && (
-              <div className="w-[44px] h-[44px] bg-[#dde9c8] rounded-full overflow-hidden flex items-center justify-center shrink-0">
+              <div className="w-[44px] h-[44px] min-w-[44px] min-h-[44px] bg-[#dde9c8] rounded-full overflow-hidden flex items-center justify-center shrink-0">
                 <img 
                   src={sophieProfileImg}
                   alt="Sophie AI"
                   className="w-full h-full object-cover"
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
             )}
@@ -99,11 +101,12 @@ export function ChatPanel({ messages, input, onInputChange, onSendMessage, isLoa
         {/* Loading indicator */}
         {isLoading && (
           <div className="flex gap-3 justify-start">
-            <div className="w-[44px] h-[44px] bg-[#dde9c8] rounded-full overflow-hidden flex items-center justify-center shrink-0">
+            <div className="w-[44px] h-[44px] min-w-[44px] min-h-[44px] bg-[#dde9c8] rounded-full overflow-hidden flex items-center justify-center shrink-0">
               <img 
                 src={sophieProfileImg}
                 alt="Sophie AI"
                 className="w-full h-full object-cover"
+                style={{ objectFit: 'cover' }}
               />
             </div>
             <div className="bg-[#f7f8f3] rounded-[12px] px-6 py-2">
