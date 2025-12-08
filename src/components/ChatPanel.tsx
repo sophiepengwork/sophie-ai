@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Send } from 'lucide-react';
-// Import Sophie's profile image from Figma assets
-import sophieProfileImg from "figma:asset/223ba36d3b6708d7df496389d00411edff9f0468.png";
+// Import Sophie's profile image
+import sophieProfileImg from "../assets/sophie-profile.png";
 
 interface Message {
   role: 'user' | 'ai';
@@ -46,12 +46,12 @@ export function ChatPanel({ messages, input, onInputChange, onSendMessage, isLoa
       {/* Chat Header */}
       <div className="bg-[#d8e493] px-8 h-[60px] flex items-center shrink-0">
         <div className="flex items-center gap-[14px]">
-          <div className="w-[44px] h-[44px] min-w-[44px] min-h-[44px] bg-white rounded-full overflow-hidden flex items-center justify-center shrink-0">
+          <div className="w-[44px] h-[44px] rounded-full overflow-hidden shrink-0 flex-shrink-0" style={{ minWidth: '44px', minHeight: '44px', maxWidth: '44px', maxHeight: '44px' }}>
             <img 
               src={sophieProfileImg}
               alt="Sophie"
-              className="w-full h-full object-cover"
-              style={{ objectFit: 'cover' }}
+              className="w-full h-full"
+              style={{ width: '44px', height: '44px', objectFit: 'cover', display: 'block' }}
             />
           </div>
           <h2 className="text-[20px] font-semibold text-black" style={{ fontFamily: 'Inter, sans-serif' }}>Sophie.AI</h2>
@@ -66,7 +66,15 @@ export function ChatPanel({ messages, input, onInputChange, onSendMessage, isLoa
             className={`flex gap-3 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             {msg.role === 'ai' && (
-              <div className="w-[44px] h-[44px] min-w-[44px] min-h-[44px] bg-[#dde9c8] rounded-full overflow-hidden flex items-center justify-center shrink-0">
+              <div className="w-[44px] h-[44px] rounded-full overflow-hidden shrink-0" style={{ minWidth: '44px', minHeight: '44px', maxWidth: '44px', maxHeight: '44px' }}>
+                <img 
+                  src={sophieProfileImg}
+                  alt="Sophie AI"
+                  className="w-full h-full"
+                  style={{ width: '44px', height: '44px', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+            )}dde9c8] rounded-full overflow-hidden flex items-center justify-center shrink-0">
                 <img 
                   src={sophieProfileImg}
                   alt="Sophie AI"
